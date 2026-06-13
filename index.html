@@ -3,11 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinícius Santos | Desenvolvedor Web</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Vinicius | Desenvolvedor Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #161627;
+            overflow-x: hidden;
+        }
+
+        .menu {
+            background-color: #1e1e2f;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            color: #ffffff;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #a78bfa;
+        }
+
+        .cabecalho {
+            text-align: center;
+            padding: 5rem 2rem;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            background: linear-gradient(-45deg, #0f0f1a, #1a1a2e, #24243e, #2d2d44);
+            background-size: 400% 400%;
+            animation: fundoAnimado 15s ease infinite;
+            animation: aparecer 1.2s ease-out;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes fundoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cabecalho h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #texto-digitado {
+            color: #a78bfa;
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.6),
+                         0 0 20px rgba(167, 139, 250, 0.4),
+                         0 0 30px rgba(167, 139, 250, 0.2);
+        }
+
+        .cursor {
+            color: #a78bfa;
+            font-weight: normal;
+            animation: piscar 0.8s infinite;
+        }
+
+        @keyframes piscar {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .cabecalho p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .cabecalho .descricao {
+            font-size: 1.15rem;
+            opacity: 0.85;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #1e1e2f;
+            color: white;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: text-decoration 0.3s;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .conteudo {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            animation: aparecer 1s ease-out;
+            background-color: #1e1e30;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .conteudo h2 {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #a78bfa;
+            padding-bottom: 0.5rem;
+        }
+
+        .conteudo p, .conteudo ul {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: #d1d5db;
+        }
+
+        .conteudo ul {
+            padding-left: 1.8rem;
+        }
+
+        .info-contato a {
+            color: #94a3b8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .info-contato a:hover {
+            color: #cbd5e1;
+            text-decoration: underline;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background-color: #a78bfa;
+            color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .botao:hover {
+            background-color: #b794f4;
+        }
+
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .whatsapp-fixo:hover {
+            transform: scale(1.15);
+            background-color: #1ebe5d;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-fixo {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Menu de navegação -->
     <nav class="menu">
         <a href="index.html">🏠 Início</a>
         <a href="sobre.html">👨‍💻 Sobre</a>
@@ -15,7 +220,6 @@
         <a href="contato.html">📩 Contato</a>
     </nav>
 
-    <!-- Seção inicial com animação de digitação -->
     <header class="cabecalho">
         <h1><span id="texto-digitado"></span><span class="cursor">|</span></h1>
         <p>💻 Desenvolvedor Web</p>
@@ -26,9 +230,22 @@
         <p>&copy; 2026 Todos os direitos reservados | Instagram: <a href="https://instagram.com/viniciuszfy" target="_blank">@viniciuszfy</a></p>
     </footer>
 
-    <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/5533991923211" target="_blank" class="whatsapp-fixo">💬</a>
 
-    <script src="js/script.js"></script>
+    <script>
+        const texto = "Olá, eu sou Vinicius";
+        const elemento = document.getElementById("texto-digitado");
+        let i = 0;
+
+        function digitar() {
+            if (i < texto.length) {
+                elemento.textContent += texto.charAt(i);
+                i++;
+                setTimeout(digitar, 120);
+            }
+        }
+
+        window.onload = digitar;
+    </script>
 </body>
 </html>
