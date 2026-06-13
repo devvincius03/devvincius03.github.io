@@ -3,11 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços | Vinícius Santos</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Serviços | Vinicius</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #161627;
+            overflow-x: hidden;
+        }
+
+        .menu {
+            background-color: #1e1e2f;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            color: #ffffff;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #a78bfa;
+        }
+
+        .conteudo {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            animation: aparecer 1s ease-out;
+            background-color: #1e1e30;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .conteudo h2 {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #a78bfa;
+            padding-bottom: 0.5rem;
+        }
+
+        .conteudo p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: #d1d5db;
+        }
+
+        .servico {
+            background-color: #272740;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #a78bfa;
+        }
+
+        .servico h3 {
+            color: #e0e0e0;
+            margin-bottom: 0.8rem;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background-color: #a78bfa;
+            color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .botao:hover {
+            background-color: #b794f4;
+        }
+
+        .centralizado {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #1e1e2f;
+            color: white;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .whatsapp-fixo:hover {
+            transform: scale(1.15);
+            background-color: #1ebe5d;
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-fixo {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Menu de navegação -->
     <nav class="menu">
         <a href="index.html">🏠 Início</a>
         <a href="sobre.html">👨‍💻 Sobre</a>
@@ -17,34 +165,29 @@
 
     <section class="conteudo">
         <h2>💻 Meus Serviços</h2>
-
         <p>Conheça tudo o que eu, como 💻 Desenvolvedor Web, posso fazer para ajudar você ou sua empresa a marcar presença digital com qualidade, velocidade e design profissional.</p>
 
-        <!-- SERVIÇO 1 -->
-        <div style="background-color: #272740; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid #606090;">
+        <div class="servico">
             <h3>💻 Criação de Sites do Zero</h3>
             <p>Desenvolvo sites completos, personalizados, do jeito que você precisa: sites institucionais, páginas de negócios, portfólios, landing pages e muito mais. Tudo bonito, organizado e que funciona perfeitamente em celular, tablet e computador.</p>
         </div>
 
-        <!-- SERVIÇO 2 -->
-        <div style="background-color: #272740; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid #606090;">
+        <div class="servico">
             <h3>📱 Sites Responsivos e Modernos</h3>
             <p>Garanto que seu site se adapte a qualquer tela. Hoje em dia a maioria das pessoas acessa a internet pelo celular, e seu site precisa estar sempre bonito e funcional em todos os aparelhos.</p>
         </div>
 
-        <!-- SERVIÇO 3 -->
-        <div style="background-color: #272740; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid #606090;">
+        <div class="servico">
             <h3>🛠️ Manutenção e Atualização</h3>
             <p>Se você já tem um site e precisa mudar algo, corrigir erros, atualizar informações, trocar imagens ou melhorar o desempenho, eu faço todo o serviço de manutenção para deixar tudo novo e funcionando bem.</p>
         </div>
 
-        <!-- SERVIÇO 4 -->
-        <div style="background-color: #272740; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid #606090;">
+        <div class="servico">
             <h3>⚙️ Sistemas e Funcionalidades</h3>
             <p>Crio funcionalidades específicas: formulários de contato, áreas de login, cálculos, painéis simples e outras ferramentas que ajudam no dia a dia do seu negócio.</p>
         </div>
 
-        <div style="text-align: center; margin-top: 2rem;">
+        <div class="centralizado">
             <p>Interessado em algum serviço? É só entrar em contato!</p>
             <a href="contato.html" class="botao">Ir para Contato</a>
         </div>
@@ -54,9 +197,6 @@
         <p>&copy; 2026 Todos os direitos reservados | Instagram: <a href="https://instagram.com/viniciuszfy" target="_blank">@viniciuszfy</a></p>
     </footer>
 
-    <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/5533991923211" target="_blank" class="whatsapp-fixo">💬</a>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
