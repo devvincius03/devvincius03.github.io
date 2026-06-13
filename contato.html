@@ -3,11 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Vinícius Santos</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Contato | Vinicius</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #161627;
+            overflow-x: hidden;
+        }
+
+        .menu {
+            background-color: #1e1e2f;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            color: #ffffff;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #a78bfa;
+        }
+
+        .conteudo {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            animation: aparecer 1s ease-out;
+            background-color: #1e1e30;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .conteudo h2 {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #a78bfa;
+            padding-bottom: 0.5rem;
+        }
+
+        .conteudo p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: #d1d5db;
+        }
+
+        .info-contato {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .info-contato a {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .info-contato a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #1e1e2f;
+            color: white;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .whatsapp-fixo:hover {
+            transform: scale(1.15);
+            background-color: #1ebe5d;
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-fixo {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Menu de navegação -->
     <nav class="menu">
         <a href="index.html">🏠 Início</a>
         <a href="sobre.html">👨‍💻 Sobre</a>
@@ -19,8 +150,8 @@
         <h2>Entre em Contato</h2>
         <p>Quer conversar sobre um projeto, tirar dúvidas ou pedir um orçamento? É só me chamar por um dos canais abaixo, respondo rápido!</p>
 
-        <div class="info-contato" style="margin-top: 2rem; font-size: 1.1rem;">
-            <p>📧 E-mail: dev.vinicius.03@gmail.com</p>
+        <div class="info-contato">
+            <p>📧 E-mail: dev.vincius.03@gmail.com</p>
             <p>📱 WhatsApp: (33) 99192-3211</p>
             <p>📍 Localização: Capelinha - MG</p>
             <p>📸 Instagram: <a href="https://instagram.com/viniciuszfy" target="_blank">@viniciuszfy</a></p>
@@ -31,9 +162,6 @@
         <p>&copy; 2026 Todos os direitos reservados | Instagram: <a href="https://instagram.com/viniciuszfy" target="_blank">@viniciuszfy</a></p>
     </footer>
 
-    <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/5533991923211" target="_blank" class="whatsapp-fixo">💬</a>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
