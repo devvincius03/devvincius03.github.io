@@ -3,11 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim | Vinícius Santos</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Sobre Mim | Vinicius</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #161627;
+            overflow-x: hidden;
+        }
+
+        .menu {
+            background-color: #1e1e2f;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            color: #ffffff;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #a78bfa;
+        }
+
+        .conteudo {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            animation: aparecer 1s ease-out;
+            background-color: #1e1e30;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .conteudo h2 {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #a78bfa;
+            padding-bottom: 0.5rem;
+        }
+
+        .conteudo p, .conteudo ul {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: #d1d5db;
+        }
+
+        .conteudo ul {
+            padding-left: 1.8rem;
+        }
+
+        .foto-perfil {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 4px solid #a78bfa;
+            box-shadow: 0 0 20px rgba(167, 139, 250, 0.4);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .container-sobre {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .texto-sobre {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .caixa-destaque {
+            margin-top: 2rem;
+            padding: 1.2rem;
+            background-color: #272740;
+            border-radius: 10px;
+            border-left: 4px solid #a78bfa;
+        }
+
+        .caixa-destaque p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .caixa-destaque a {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #1e1e2f;
+            color: white;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .whatsapp-fixo:hover {
+            transform: scale(1.15);
+            background-color: #1ebe5d;
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-fixo {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Menu de navegação -->
     <nav class="menu">
         <a href="index.html">🏠 Início</a>
         <a href="sobre.html">👨‍💻 Sobre</a>
@@ -18,24 +182,10 @@
     <section class="conteudo">
         <h2>Sobre Mim</h2>
 
-        <!-- FOTO DO LADO ESQUERDO + TEXTO AO LADO -->
-        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-            
-            <!-- FOTO -->
-            <img src="imagens/foto-perfil.jpg" alt="Vinícius Santos" style="
-                width: 220px;
-                height: 220px;
-                border-radius: 50%;
-                border: 4px solid #47476b;
-                box-shadow: 0 0 20px rgba(71, 71, 107, 0.4);
-                object-fit: cover;
-                flex-shrink: 0;
-            ">
-
-            <!-- TEXTO AO LADO DA FOTO -->
-            <div style="flex: 1; min-width: 280px;">
-                <p>Olá! Me chamo <strong>Vinícius Santos</strong>, sou 💻 Desenvolvedor Web e apaixonado por programação e tecnologia. Moro em Capelinha - MG e trabalho para transformar ideias em projetos digitais funcionais, bonitos e que realmente atendem ao que você precisa.</p>
-
+        <div class="container-sobre">
+            <img src="foto-perfil.jpg" alt="Vinicius" class="foto-perfil">
+            <div class="texto-sobre">
+                <p>Olá! Me chamo <strong>Vinicius</strong>, sou 💻 Desenvolvedor Web e apaixonado por programação e tecnologia. Moro em Capelinha - MG e trabalho para transformar ideias em projetos digitais funcionais, bonitos e que realmente atendem ao que você precisa.</p>
                 <p>Comecei minha jornada estudando lógica de programação e desenvolvimento web, e hoje domino ferramentas como HTML, CSS e JavaScript. Gosto de criar códigos organizados, fáceis de manter e que funcionem perfeitamente em celulares, tablets e computadores.</p>
             </div>
         </div>
@@ -52,13 +202,9 @@
             <li>🔧 Manutenção, atualização e melhoria de projetos já existentes</li>
         </ul>
 
-        <div style="margin-top: 2rem; padding: 1.2rem; background-color: #272740; border-radius: 10px; border-left: 4px solid #a78bfa;">
-            <p style="font-size: 1.15rem; font-weight: 500; margin: 0;">
-                💡 Quer saber exatamente como posso ajudar no seu projeto?<br>
-                Conheça todos os meus trabalhos e soluções na página 
-                <a href="servicos.html" style="color: #a78bfa; text-decoration: none; font-weight: bold; font-size: 1.2rem;">🛠️ Serviços</a> — 
-                tenho certeza que tem algo perfeito para o que você precisa!
-            </p>
+        <div class="caixa-destaque">
+            <p>💡 Quer saber exatamente como posso ajudar no seu projeto?<br>
+            Conheça todos os meus trabalhos e soluções na página <a href="servicos.html">🛠️ Serviços</a> — tenho certeza que tem algo perfeito para o que você precisa!</p>
         </div>
     </section>
 
@@ -66,9 +212,6 @@
         <p>&copy; 2026 Todos os direitos reservados | Instagram: <a href="https://instagram.com/viniciuszfy" target="_blank">@viniciuszfy</a></p>
     </footer>
 
-    <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/5533991923211" target="_blank" class="whatsapp-fixo">💬</a>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
